@@ -1,4 +1,12 @@
 def player_choice(board):
+    """
+        player_choice -> int
+        Description: Select the position to fullfill
+        Inputs:
+            board : list
+        Outputs:
+            The position to fullfill in the board
+    """
     while True:
         position = input("Please select your position : ")
         if position.isnumeric():

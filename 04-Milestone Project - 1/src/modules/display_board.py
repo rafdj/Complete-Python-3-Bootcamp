@@ -2,6 +2,12 @@ from IPython.display import clear_output
 
 
 def display_board(board=['#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']):
+    """
+        display_board -> NoneType
+        Description: function to print the play board
+        Outputs:
+            Printed screen
+    """
     clear_output()
 
     empty_line = 7*' '+'|'+7*' '+'|'+7*' '

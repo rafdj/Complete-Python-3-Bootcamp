@@ -1,4 +1,14 @@
 def win_check(board, mark):
+    """
+        win_check -> boolean
+        Description: Check alignment of mark to know if it wins
+        Inputs:
+            board : list
+            mark : str
+        Outputs:
+            True : Player with "mark" has won
+            False : Player with "mark" didn't win yet
+    """
     board_values = board[1:]
 
     result = False
