@@ -1,8 +1,8 @@
 def win_check(board, mark):
     board_values = board[1:]
-    
+
     result = False
-    
+
     # Diagonal winner
     if mark not in board_values:
         result = False
