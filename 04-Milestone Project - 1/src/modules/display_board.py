@@ -5,6 +5,8 @@ def display_board(board=['#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']):
     """
         display_board -> NoneType
         Description: function to print the play board
+        Inputs:
+                board : list
         Outputs:
             Printed screen
     """
