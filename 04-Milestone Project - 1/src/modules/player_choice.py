@@ -14,6 +14,7 @@ def player_choice(board):
             if position > 9:
                 print("Please select a number between 1 and 9")
             elif space_check(board, position):
-
                 return(position)
                 break
+            else:
+                print("This position is no more available")
