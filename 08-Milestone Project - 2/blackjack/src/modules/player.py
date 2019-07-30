@@ -26,9 +26,9 @@ class Card():
         Method to select a random card
         Output : Card object with random color, value and related number of points 
         """
-        selected_card_value = random.choice(list(cards_value.keys()))
-        selected_card_points = cards_value[selected_card_value]
-        cls.color = random.choice(colors_value)
+        selected_card_value = random.choice(list(cls.cards_value.keys()))
+        selected_card_points = cls.cards_value[selected_card_value]
+        cls.color = random.choice(cls.colors_value)
         cls.value = selected_card_value
         cls.points = selected_card_points
         return cls
