@@ -39,11 +39,13 @@ class Card():
 
 class Player():
     def __init__(self, name=playername_by_default, balance=balance_by_default, game=[]):
-        self.name = name
         if name:
-            self.balance = balance/17
+            self.name = name
         else:
-            self.balance = balance
+            self.name = playername_by_default
+        self.balance = balance
+        if self.name != playername_by_default and self.balance == balance_by_default:
+            self.balance = balance/17
         self.game = game
         self.nb_cards = len(game)
 
