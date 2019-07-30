@@ -1,5 +1,6 @@
 import random
 
+# Import config
 balance_by_default = 17000
 playername_by_default = "Croupier"
 
@@ -44,4 +45,4 @@ class Player():
         self.nb_cards = len(game)
 
     def add_card_to_game(self):
-        pass
+        self.game.append(Card.random_card())
