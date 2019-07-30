@@ -12,7 +12,7 @@ class Card():
         self.points = points
 
     def __str__(self):
-        return "Card color : "+self.color+"\nCard value : "+self.value+"\n\Number of points for this card : "+str(self.points)
+        return "Card color : "+self.color+"\nCard value : "+self.value+"\nNumber of points for this card : "+str(self.points)
 
     # This is Class attributes that define available parameters for a card
     colors_value = ["Carré", "Coeur", "Trèfle", "Pique"]
@@ -44,5 +44,8 @@ class Player():
         self.game = game
         self.nb_cards = len(game)
 
+    def __str__(self):
+        return "Player name : "+self.name+"\nPlayer balance : "+str(self.balance)+"\nPlayer cards : "+str(self.game)
+    
     def add_card_to_game(self):
         self.game.append(Card.random_card())
