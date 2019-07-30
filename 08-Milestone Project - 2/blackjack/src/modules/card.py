@@ -11,7 +11,7 @@ class Card():
         """
         print method of a card return the card value, its color and the number of points
         """
-        return "Card color : "+self.color+"\nCard value : "+self.value+"\nNumber of points for this card : "+str(self.points)
+        return (self.color, self.value, self.points)
 
     # This is Class attributes that define available parameters for a card
     colors_value = ["Carré", "Coeur", "Trèfle", "Pique"]

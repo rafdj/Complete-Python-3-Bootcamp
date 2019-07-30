@@ -44,7 +44,7 @@ class Player():
     def game_value(self):
         game_value = 0
         for card in self.game:
-            if card.value = "As":
+            if card.value == "As":
                 pass
             else:
                 pass
