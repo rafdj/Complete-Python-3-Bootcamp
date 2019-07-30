@@ -47,7 +47,9 @@ class Player():
         if self.name != playername_by_default and self.balance == balance_by_default:
             self.balance = balance/17
         self.game = game
-        self.nb_cards = len(game)
+
+    def __len__(self):
+        return len(self.game)
 
     def __str__(self):
         return "Player name : "+self.name+"\nPlayer balance : "+str(self.balance)+"\nPlayer cards : "+str(self.game)
