@@ -42,10 +42,17 @@ class Player():
         self.game.append(Card.random_card())
 
     def game_value(self):
-        game_value = 0
-        for card in self.game:
-            if card.value == "As":
-                pass
-            else:
-                pass
+        try:
+            game_value = sum(card.points for card in player1.game)
+        except:
+            game_value = 0
+            for card in self.game:
+                if card.value == "As":
+                    if game_value+11 > 17:
+                        game_value += 1
+                    else:
+                        game_value += 11
+                        break
+                else:
+                    game_value += card.points
         return game_value

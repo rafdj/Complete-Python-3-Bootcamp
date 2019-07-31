@@ -13,7 +13,7 @@ class Card():
         """
         return (self.color, self.value, self.points)
 
-    # This is Class attributes that define available parameters for a card
+    # Class attributes to define available parameters for a card
     colors_value = ["Carré", "Coeur", "Trèfle", "Pique"]
 
     cards_value = {str(i): i for i in range(2, 10)}
