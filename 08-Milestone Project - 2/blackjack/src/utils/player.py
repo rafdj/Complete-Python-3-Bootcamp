@@ -34,7 +34,12 @@ class Player():
         """
         print method retunr the name, the balance and all the game of a player
         """
-        return "Player name : "+self.name+"\nPlayer balance : "+str(self.balance)+"\nPlayer cards : "+str(self.game)
+        player_game_cards = ""
+        i = 1
+        for card in self.game:
+            player_game_cards += "\nCard "+str(i)+" : ("+str(card.color)+", "+str(card.value)+", "+str(card.points)
+            i += 1
+        return "Player name : "+self.name+"\nPlayer balance : "+str(self.balance)+"\nPlayer cards : "+"caca2"+player_game_cards
 
     def game_value(self):
         """
