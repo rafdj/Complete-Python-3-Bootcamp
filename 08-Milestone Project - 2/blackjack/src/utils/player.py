@@ -1,6 +1,7 @@
 # Import config
 balance_by_default = 17000
 playername_by_default = "Croupier"
+blackjack_value = 21
 
 
 class Player():
@@ -35,12 +36,6 @@ class Player():
         """
         return "Player name : "+self.name+"\nPlayer balance : "+str(self.balance)+"\nPlayer cards : "+str(self.game)
 
-    def add_card_to_game(self):
-        """
-        Add a random card to the player game
-        """
-        self.game.append(Card.random_card())
-
     def game_value(self):
         """
         Return the best combinaison of the player cards
@@ -48,12 +43,12 @@ class Player():
         try:
             game_value = sum(card.points for card in player1.game)
         except:
-            # Calculation should failed because of As in the game
+            # Calculation should failed because of As in the game has 2 possible values
             game_value = 0
             for card in self.game:
                 if card.value == "As":
-                    # Maximize chances to be close to the blackjack
-                    if game_value+11 > 21:
+                    # Maximize chances to be close to the blackjack value 21
+                    if game_value+11 > blackjack_value:
                         game_value += 1
                     else:
                         game_value += 11
