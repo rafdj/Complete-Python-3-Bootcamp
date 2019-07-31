@@ -42,13 +42,18 @@ class Player():
         self.game.append(Card.random_card())
 
     def game_value(self):
+        """
+        Return the best combinaison of the player cards
+        """
         try:
             game_value = sum(card.points for card in player1.game)
         except:
+            # Calculation should failed because of As in the game
             game_value = 0
             for card in self.game:
                 if card.value == "As":
-                    if game_value+11 > 17:
+                    # Maximize chances to be close to the blackjack
+                    if game_value+11 > 21:
                         game_value += 1
                     else:
                         game_value += 11
