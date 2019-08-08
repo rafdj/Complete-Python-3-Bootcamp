@@ -39,14 +39,14 @@ class Player():
         for card in self.game:
             player_game_cards += "\nCard "+str(i)+" : ("+str(card.color)+", "+str(card.value)+", "+str(card.points)
             i += 1
-        return "Player name : "+self.name+"\nPlayer balance : "+str(self.balance)+"\nPlayer cards : "+"caca2"+player_game_cards
+        return "Player name : "+self.name+"\nPlayer balance : "+str(self.balance)+"\nPlayer cards : "+player_game_cards
 
     def game_value(self):
         """
         Return the best combinaison of the player cards
         """
         try:
-            game_value = sum(card.points for card in player1.game)
+            game_value = sum(card.points for card in self.game)
         except:
             # Calculation should failed because of As in the game has 2 possible values
             game_value = 0
