@@ -37,9 +37,9 @@ class Player():
         player_game_cards = ""
         i = 1
         for card in self.game:
-            player_game_cards += "\nCard "+str(i)+" : ("+str(card.color)+", "+str(card.value)+", "+str(card.points)
+            player_game_cards += "\nCard "+str(i)+" : ("+str(card.color)+","+str(card.value)+","+str(card.points)+")"
             i += 1
-        return "Player name : "+self.name+"\nPlayer balance : "+str(self.balance)+"\nPlayer cards : "+"caca2"+player_game_cards
+        return "Player name : "+self.name+"\nPlayer balance : "+str(self.balance)+"\nPlayer cards : "+player_game_cards
 
     def game_value(self):
         """
