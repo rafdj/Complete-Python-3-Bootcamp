@@ -1,14 +1,34 @@
 import sys
 import os
-
+os.path.abspath(os.curdir)+"\\Complete-Python-3-Bootcamp\\08-Milestone Project - 2\\blackjack\\src"
 sys.path.append(os.path.abspath(os.curdir)+"\\Complete-Python-3-Bootcamp\\08-Milestone Project - 2\\blackjack\\src")
 
 from utils.card import *
+from utils.player import *
 
-colors_value = ["Carré", "Coeur", "Trèfle", "Pique"]
+# Selection of players number
+while True:
+    try:
+        players_number = int(input("Please select a number of players : "))
+    except:
+        print("Please type a numeric number")
+    else:
+        if players_number == 0:
+            print("Please select a number greater than 0")
+        else:
+            break
 
-cards_value = {str(i): i for i in range(1, 10)}
-cards_value.update({i: 10 for i in ['Valet', 'Dame', 'Roi']})
-cards_value.update({'As': (1, 10)})
-
-test_card = Card.random_card()
+# Players init
+croupier = Player()
+i = 1
+players = list()
+while i <= players_number:
+    introduction = "You are the number "+str(i)+"\nWhat is your name ? "
+    while True:
+        player_name = input(introduction)
+        if player_name:
+            break
+        else:
+            print("Please type a name")
+    players.append(Player(name=player_name))
+    i += 1
