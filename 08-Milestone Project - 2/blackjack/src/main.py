@@ -14,8 +14,12 @@ while not there_is_a_winner:
         while True: 
             request_for_player = player.name + ", Do you want a card ? Y/N : "
             do_you_want_a_card = input(request_for_player)
-            if do_you_want_a_card.strip().upper() in ('Y','N'):
+            if do_you_want_a_card.strip().upper() == 'Y':
+                player.game.append(Card.random_card())
+                break
+            elif do_you_want_a_card.strip().upper() == 'N':
                 break
             else:
                 print("I did not understand your answer, please select Y(yes) or N(no)")
     there_is_a_winner = True
+    #TODO : Add the real test of winner 
