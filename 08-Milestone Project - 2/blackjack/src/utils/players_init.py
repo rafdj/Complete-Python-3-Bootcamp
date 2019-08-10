@@ -25,10 +25,9 @@ def players_init():
             else:
                 break
 
-    # Players init
-    croupier = Player()
+    # Players init starting by the croupier
+    players = [Player()]
     i = 1
-    players = list()
     while i <= players_number:
         introduction = "You are the number "+str(i)+"\nWhat is your name ? "
         while True:
