@@ -12,7 +12,7 @@ players = players_init()
 while not there_is_a_winner(players)[1]:
     # Croupier is the player 0 he never add cards to himself
     for player in players[1:]:
-        while True: 
+        while True:
             request_for_player = player.name + ", Do you want a card ? Y/N : "
             do_you_want_a_card = input(request_for_player)
             if do_you_want_a_card.strip().upper() == 'Y':
