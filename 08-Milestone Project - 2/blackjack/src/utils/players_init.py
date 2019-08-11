@@ -7,6 +7,7 @@ sys.path.append(os.path.abspath(os.curdir)+"\\Complete-Python-3-Bootcamp\\08-Mil
 from utils.card import *
 from utils.player import *
 
+
 def players_init():
     """
     Initialize the game with a requested number of players

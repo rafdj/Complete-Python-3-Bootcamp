@@ -18,7 +18,7 @@ while not there_is_a_winner(players)[1]:
             if do_you_want_a_card.strip().upper() == 'Y':
                 player.game.append(Card.random_card())
                 # Croupier add a card only if a player do it
-                player[0].game.append(Card.random_card())
+                players[0].game.append(Card.random_card())
                 break
             elif do_you_want_a_card.strip().upper() == 'N':
                 break
