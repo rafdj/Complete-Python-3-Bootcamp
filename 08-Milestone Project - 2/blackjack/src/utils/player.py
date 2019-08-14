@@ -1,10 +1,13 @@
+from utils.card import *
+
+
 # Import config
 balance_by_default = 17000
 playername_by_default = "Croupier"
 blackjack_value = 21
 
 
-class Player(list):
+class Player(Card):
     def __init__(self, name=playername_by_default, balance=balance_by_default, game=[]):
         """
         - if the name is empty or not provided, the player name should by the
@@ -15,6 +18,7 @@ class Player(list):
         by default divided by the maximum number of rounds (17)
         - the initial game of a player, including the crouper, is empty
         """
+        super().__init__()
         if name:
             self.name = name
         else:
@@ -37,9 +41,9 @@ class Player(list):
         player_game_cards = ""
         i = 1
         for card in self.game:
-            player_game_cards += "\nCard "+str(i)+" : ("+str(card.color)+", "+str(card.value)+", "+str(card.points)
+            player_game_cards += "\nCard "+str(i)+" : ("+str(card.color)+", "+str(card.value)+", "+str(card.points)+")"
             i += 1
-        return "Player name : "+self.name+"\nPlayer balance : "+str(self.balance)+"\nPlayer cards : "+"caca2"+player_game_cards
+        return "Player name : "+self.name+"\nPlayer balance : "+str(self.balance)+"\nPlayer cards : "+player_game_cards
 
     def game_value(self):
         """
