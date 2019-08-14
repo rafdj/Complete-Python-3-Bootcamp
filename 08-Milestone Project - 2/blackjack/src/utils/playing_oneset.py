@@ -16,6 +16,7 @@ def playing_oneset(players):
         No player ask for a card
     """
     player_index = 1
+    number_of_no = 0
     while True:
         player = players[player_index]
         request_for_player = player.name + ", Do you want a card ? Y/N : "
@@ -26,9 +27,13 @@ def playing_oneset(players):
             players[0].game.append(Card.random_card())
             player_index += 1
         elif do_you_want_a_card.strip().upper() == 'N':
-            player_index += 1
-        else:
-            print("I did not understand your answer, please select Y(yes) or N(no)")
+            if number_of_no < 3:
+                print("I did not understand your answer, please select Y(yes) or N(no)")
+                player_index += 1
+                number_of_no += 1
+            else:
+                print("OK this round is up ! Let's check who is the winner")
+                break
         if player_index == len(players):
             player_index = 1
         if max([len(player) == 17 for player in players]):
