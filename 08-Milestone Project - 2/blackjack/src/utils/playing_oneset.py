@@ -31,6 +31,5 @@ def playing_oneset(players):
             print("I did not understand your answer, please select Y(yes) or N(no)")
         if player_index == len(players):
             player_index = 1
-        # TO DO : Add a test if all the players say no
         if max([len(player) == 17 for player in players]):
             break

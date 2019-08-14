@@ -14,12 +14,12 @@ class Card():
         return (self.color, self.value, self.points)
 
     # Class attributes to define available parameters for a card
-    colors_value = ["Carré", "Coeur", "Trèfle", "Pique"]
+    COLORS_VALUE = ["Carré", "Coeur", "Trèfle", "Pique"]
 
-    cards_value = {str(i): i for i in range(2, 10)}
+    CARDS_VALUE = {str(i): i for i in range(2, 10)}
     # Points values
-    cards_value.update({i: 10 for i in ['Valet', 'Dame', 'Roi']})
-    cards_value.update({'As': (1, 11)})
+    CARDS_VALUE.update({i: 10 for i in ['Valet', 'Dame', 'Roi']})
+    CARDS_VALUE.update({'As': (1, 11)})
 
     @classmethod
     def random_card(cls):
@@ -28,9 +28,9 @@ class Card():
         Output : Card object with random color, value and related number of
         points
         """
-        selected_card_value = random.choice(list(cls.cards_value.keys()))
-        selected_card_points = cls.cards_value[selected_card_value]
-        cls.color = random.choice(cls.colors_value)
+        selected_card_value = random.choice(list(cls.CARDS_VALUE.keys()))
+        selected_card_points = cls.CARDS_VALUE[selected_card_value]
+        cls.color = random.choice(cls.COLORS_VALUE)
         cls.value = selected_card_value
         cls.points = selected_card_points
         return cls
