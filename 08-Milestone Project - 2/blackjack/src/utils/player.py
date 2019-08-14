@@ -16,7 +16,7 @@ class Player():
         default
         - if the balance value is not forced, it should take the balance value
         by default divided by the maximum number of rounds (17)
-        - the initial game of a player, including the crouper, is empty
+        - the initial game of a player, including the croupier, is empty
         """
         if name:
             self.name = name
