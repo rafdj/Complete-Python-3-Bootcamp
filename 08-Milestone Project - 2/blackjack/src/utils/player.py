@@ -7,7 +7,7 @@ playername_by_default = "Croupier"
 blackjack_value = 21
 
 
-class Player(Card):
+class Player():
     def __init__(self, name=playername_by_default, balance=balance_by_default, game=[]):
         """
         - if the name is empty or not provided, the player name should by the
@@ -18,7 +18,6 @@ class Player(Card):
         by default divided by the maximum number of rounds (17)
         - the initial game of a player, including the crouper, is empty
         """
-        super().__init__()
         if name:
             self.name = name
         else:
