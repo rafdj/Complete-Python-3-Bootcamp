@@ -41,5 +41,5 @@ def playing_oneset(players):
             # All the players have been asked for a new card in the current round 
             player_index = 1
         if max([len(player) == 17 for player in players]):
-            # Reached maximum number of round
+            # Reached maximum number of rounds
             break
