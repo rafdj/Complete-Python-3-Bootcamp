@@ -22,10 +22,13 @@ def playing_oneset(players):
         request_for_player = player.name + ", Do you want a card ? Y/N : "
         do_you_want_a_card = input(request_for_player)
         if do_you_want_a_card.strip().upper() == 'Y':
-            player.game.append(Card.random_card())
+            new_card = Card.random_card()
+            player.game.append(new_card)
             # Croupier add a card only if a player do it
-            players[0].game.append(Card.random_card())
+            players[0].game.append(new_card)
             player_index += 1
+            del(new_card)
+            number_of_no = 0
         elif do_you_want_a_card.strip().upper() == 'N':
             if number_of_no < 3:
                 print("I did not understand your answer, please select Y(yes) or N(no)")
@@ -35,6 +38,8 @@ def playing_oneset(players):
                 print("OK this round is up ! Let's check who is the winner")
                 break
         if player_index == len(players):
+            # All the players have been asked for a new card in the current round 
             player_index = 1
         if max([len(player) == 17 for player in players]):
+            # Reached maximum number of round
             break
