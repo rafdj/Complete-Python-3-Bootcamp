@@ -8,7 +8,7 @@ blackjack_value = 21
 
 
 class Player():
-    def __init__(self, name=playername_by_default, balance=balance_by_default, game=[]):
+    def __init__(self, name=playername_by_default, balance=balance_by_default, game=[], winner=False):
         """
         - if the name is empty or not provided, the player name should by the
         name by default
@@ -26,6 +26,7 @@ class Player():
         if self.name != playername_by_default and self.balance == balance_by_default:
             self.balance = balance/17
         self.game = list(game)
+        self.winner = winner
 
     def __len__(self):
         """
