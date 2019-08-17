@@ -61,7 +61,10 @@ def set_playing(players):
             print("I did not understand your answer, please select Y(yes) or N(no)")
 
         if player_index == len(players):
-            if len(croupier) < 17:
+            if max([player.game_value() == 21 for player in players[1:]]):
+                print("Blackjack !! one of the players has won")
+                break
+            elif len(croupier) < 17:
                 # All the players have been asked for a new card in the current round
                 print("OK this round is up !")
                 # Croupier add a card
@@ -69,10 +72,6 @@ def set_playing(players):
                 croupier.game.append(new_card)
                 del(new_card)
                 player_index = 1
-            elif players[1].game_value() == 21:
-                # TO DO : Update the test One of the players had a blackjack than stop
-                # TO DO : Switch it before previous test
-                break
             else:
                 # Reached maximum number of rounds : 17 cards for croupier than stop
                 break
