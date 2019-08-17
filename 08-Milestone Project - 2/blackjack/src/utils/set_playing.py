@@ -19,9 +19,12 @@ def set_init(players):
     index = 1
     while index < len(players):
         player = players[index]
+        # Reinitialize a player
         player.game = []
+        player.mise = 0
         try:
-            mise = int(input(player.name+", how much do you wanna play ?"))
+            request_for_player = player.name+", how much do you wanna play ?" 
+            mise = int(input(request_for_player))
             if mise > player.balance:
                 print(player.name+" You don't have enough money, this is your sold :"+str(player.balance))
             else:
@@ -49,20 +52,23 @@ def set_playing(players):
             new_card = Card.random_card()
             player.game.append(new_card)
             # Croupier add a card only if a player do it
+            new_card = Card.random_card()
             croupier.game.append(new_card)
             player_index += 1
             del(new_card)
         elif do_you_want_a_card.strip().upper() == 'N':
-            if number_of_no < 3:
-                player_index += 1
-            else:
-                print("OK this set is up !")
-                break
+            player_index += 1
+            break
         else:
             print("I did not understand your answer, please select Y(yes) or N(no)")
+
         if player_index == len(players):
-            # All the players have been asked for a new card in the current round
-            player_index = 1
-        if max([len(player) == 17 for player in players]):
-            # Reached maximum number of rounds
-            break
+            if len(croupier) < 17:
+                # All the players have been asked for a new card in the current round
+                print("OK this round is up !")
+                new_card = Card.random_card()
+                croupier.game.append(new_card)
+                player_index = 1
+            else:
+                # Reached maximum number of set
+                break
