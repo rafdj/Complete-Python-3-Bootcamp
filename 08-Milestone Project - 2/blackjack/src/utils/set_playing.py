@@ -23,7 +23,7 @@ def set_init(players):
         player.game = []
         player.mise = 0
         try:
-            request_for_player = player.name+", how much do you wanna play ?" 
+            request_for_player = player.name+", how much do you wanna play ?"
             mise = int(input(request_for_player))
             if mise > player.balance:
                 print(player.name+" You don't have enough money, this is your sold :"+str(player.balance))
@@ -69,6 +69,10 @@ def set_playing(players):
                 croupier.game.append(new_card)
                 del(new_card)
                 player_index = 1
+            elif players[1].game_value() == 21:
+                # TO DO : Update the test One of the players had a blackjack than stop
+                # TO DO : Switch it before previous test
+                break
             else:
-                # Reached maximum number of rounds
+                # Reached maximum number of rounds : 17 cards for croupier than stop
                 break
