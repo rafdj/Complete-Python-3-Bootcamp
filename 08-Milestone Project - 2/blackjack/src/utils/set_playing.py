@@ -27,6 +27,8 @@ def set_init(players):
             mise = int(input(request_for_player))
             if mise > player.balance:
                 print(player.name+" You don't have enough money, this is your sold :"+str(player.balance))
+            elif mise == 0:
+                print("Your amount must be bigger than 0")
             else:
                 player.mise = mise
                 index += 1
@@ -51,14 +53,10 @@ def set_playing(players):
         if do_you_want_a_card.strip().upper() == 'Y':
             new_card = Card.random_card()
             player.game.append(new_card)
-            # Croupier add a card only if a player do it
-            new_card = Card.random_card()
-            croupier.game.append(new_card)
             player_index += 1
             del(new_card)
         elif do_you_want_a_card.strip().upper() == 'N':
             player_index += 1
-            break
         else:
             print("I did not understand your answer, please select Y(yes) or N(no)")
 
@@ -66,9 +64,11 @@ def set_playing(players):
             if len(croupier) < 17:
                 # All the players have been asked for a new card in the current round
                 print("OK this round is up !")
+                # Croupier add a card
                 new_card = Card.random_card()
                 croupier.game.append(new_card)
+                del(new_card)
                 player_index = 1
             else:
-                # Reached maximum number of set
+                # Reached maximum number of rounds
                 break
