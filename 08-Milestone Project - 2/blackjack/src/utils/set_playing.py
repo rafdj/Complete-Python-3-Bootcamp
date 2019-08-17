@@ -15,8 +15,21 @@ def set_init(players):
     Output : Update Player list
     """
     print("Faites vos jeux rien ne va plus !")
-    for player in players[1:]
-        
+    players[0].game = []
+    index = 1
+    while index < len(players):
+        player = players[index]
+        player.game = []
+        try:
+            mise = int(input(player.name+", how much do you wanna play ?"))
+            if mise > player.balance:
+                print(player.name+" You don't have enough money, this is your sold :"+str(player.balance))
+            else:
+                player.mise = mise
+                index += 1
+        except:
+            print("I didn't understand your answer, please write an integer number")
+
 
 def set_playing(players):
     """
@@ -48,9 +61,8 @@ def set_playing(players):
         else:
             print("I did not understand your answer, please select Y(yes) or N(no)")
         if player_index == len(players):
-            # All the players have been asked for a new card in the current round 
+            # All the players have been asked for a new card in the current round
             player_index = 1
         if max([len(player) == 17 for player in players]):
             # Reached maximum number of rounds
             break
-    return players

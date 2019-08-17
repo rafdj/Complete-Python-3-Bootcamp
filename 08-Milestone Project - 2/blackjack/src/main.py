@@ -15,12 +15,14 @@ players = players_init()
 while True:
     set_init(players)
     if max([player.mise for player in players[1:]]) == 0:
+        print("Finished : No player want to play again")
         break
     else:
         set_playing(players)
         set_ending(players)
         if max([player.game_value() for player in players[1:]]) == 0:
             print("Finished : The bank has won ! All the players have lost")
+            break
 
 """
 while not there_is_a_winner(players)[1]:
