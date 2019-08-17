@@ -43,3 +43,4 @@ def playing_oneset(players):
         if max([len(player) == 17 for player in players]):
             # Reached maximum number of rounds
             break
+    return players
