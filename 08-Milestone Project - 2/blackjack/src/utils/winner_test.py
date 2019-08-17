@@ -2,7 +2,7 @@ from src.utils.player import *
 from src.utils.card import *
 
 
-def there_is_a_winner(players):
+def who_is_winner(players):
     """
     Function to test if there is a winner in the game
     Inputs : List of Player
@@ -12,25 +12,21 @@ def there_is_a_winner(players):
     """
     croupier = players[0]
     if croupier.game_value() > 21:
-        players = map(lambda player.winner: True, players)
+        # All the players have won
+        players = map(lambda player.balance: player.balance+1.5*player.mise, players)
     elif croupier.game_value() == 21:
-        players = map(lambda player.winner: False, players)
+        # All the players have lost
+        players = map(lambda player.balance: max(0, player.balance-player.mise), players)
     elif croupier.game_value() > 17:
         for player in players[1:]:
-            if player.game_value() > croupier:
-                player.winner = True
+            if player.game_value() > croupier.game_value():
+                # Player with a bigger balance than croupier won
                 player.balance += 1.5*player.mise
+            elif player.game_value() == croupier.game_value():
+                # Player with same balance get back their cash
+                pass
             else:
-                player.winner = False
-    players[0].game_value == 21
-    players[0].game_value > 17
+                # Player with lower balance than croupier lost
+                player.balance -= player.mise
 
-    if players[0].game_value == 21:
-        the_winner = players[0]
-        there_is_a_winner = True
-    elif 17 < players[0].game_value < 21:
-        pass
-    # TO DO : Define the real winning rule
-    the_winner = players[0]
-    there_is_a_winner = len(players[1])>4
-    return the_winner, there_is_a_winner
+    return players
