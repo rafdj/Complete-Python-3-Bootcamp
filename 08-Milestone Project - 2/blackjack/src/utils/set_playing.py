@@ -15,7 +15,8 @@ def set_init(players):
     Output : Update Player list
     """
     print("Faites vos jeux rien ne va plus !")
-
+    for player in players[1:]
+        
 
 def set_playing(players):
     """
