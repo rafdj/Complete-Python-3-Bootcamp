@@ -10,9 +10,21 @@ def there_is_a_winner(players):
         the_winner : winner Player
         there_is_a_winnner : Boolean
     """
+    croupier = players[0]
+    if croupier.game_value() > 21:
+        players = map(lambda player.winner: True, players)
+    elif croupier.game_value() == 21:
+        players = map(lambda player.winner: False, players)
+    elif croupier.game_value() > 17:
+        for player in players[1:]:
+            if player.game_value() > croupier:
+                player.winner = True
+                player.balance += 1.5*player.mise
+            else:
+                player.winner = False
     players[0].game_value == 21
     players[0].game_value > 17
-    
+
     if players[0].game_value == 21:
         the_winner = players[0]
         there_is_a_winner = True
