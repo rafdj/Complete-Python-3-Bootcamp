@@ -1,5 +1,5 @@
-from src.utils.player import *
-from src.utils.card import *
+from utils.player import *
+from utils.card import *
 
 
 def set_ending(players):
