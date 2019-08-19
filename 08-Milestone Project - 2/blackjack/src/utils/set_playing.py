@@ -28,7 +28,7 @@ def set_init(players):
             if mise > player.balance:
                 print(player.name+" You don't have enough money, this is your sold :"+str(player.balance))
             elif mise == 0:
-                print("Your amount must be bigger than 0")
+                print("Warning ! Your amount must be bigger than 0")
             else:
                 player.mise = mise
                 index += 1
@@ -67,7 +67,7 @@ def set_playing(players):
             elif len(croupier) < 17:
                 # All the players have been asked for a new card in the current round
                 print("OK this round is up !")
-                # Croupier add a card
+                # Add a card to the croupier's game
                 new_card = Card.random_card()
                 croupier.game.append(new_card)
                 del(new_card)
