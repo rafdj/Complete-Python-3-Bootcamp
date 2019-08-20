@@ -32,11 +32,11 @@ def set_init(players):
                 request_for_player = player.name+", Do you confirm that you'll leave the game ?"
                 player_answer = input(request_for_player)
                 if player_answer.strip().upper() == 'Y':
-                    pass
+                    break
                 elif player_answer.strip().upper() == 'N':
-                    pass
+                    print("Please correct the amount")
                 else:
-                    pass
+                    print("I did not understand your answer")
             else:
                 player.mise = mise
                 index += 1
@@ -70,11 +70,13 @@ def set_playing(players):
 
         if player_index == len(players):
             if max([player.game_value() == 21 for player in players[1:]]):
+                # One of the players had a blackjac
+                print("The set is up !")
                 print("Blackjack !! one of the players has won")
                 break
             elif len(croupier) < 17:
                 # All the players have been asked for a new card in the current round
-                print("OK this round is up !")
+                print("The round is up")
                 # Add a card to the croupier's game
                 new_card = Card.random_card()
                 croupier.game.append(new_card)
@@ -82,4 +84,5 @@ def set_playing(players):
                 player_index = 1
             else:
                 # Reached maximum number of rounds : 17 cards for croupier than stop
+                print("The set is up !")
                 break
