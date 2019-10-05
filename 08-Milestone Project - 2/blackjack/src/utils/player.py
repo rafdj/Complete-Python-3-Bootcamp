@@ -50,7 +50,7 @@ class Player():
         Return the best combinaison of the player cards
         """
         try:
-            game_value = sum(card.points for card in player1.game)
+            game_value = sum(card.points for card in self.game)
         except:
             # Calculation should failed because of As in the game has 2 possible values
             game_value = 0
