@@ -27,8 +27,6 @@ def set_init(players):
             mise = int(input(request_for_player))
             if mise > player.balance:
                 print(player.name+" You don't have enough money, this is your sold :"+str(player.balance))
-            elif mise == 0:
-                print("Your amount must be bigger than 0")
             else:
                 player.mise = mise
                 index += 1
