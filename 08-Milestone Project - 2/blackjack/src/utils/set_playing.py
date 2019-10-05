@@ -40,7 +40,7 @@ def set_playing(players):
     """
     Playing one set of blackjack
     The set continue until :
-        Crouper (players[0]) has 17 cards or
+        Croupier (players[0]) has 17 cards or
         No player ask for a card
     """
     player_index = 1
