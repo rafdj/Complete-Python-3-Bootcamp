@@ -27,6 +27,7 @@ def set_init(players):
             mise = int(input(request_for_player))
             if mise > player.balance:
                 print(player.name+" You don't have enough money, this is your sold :"+str(player.balance))
+<<<<<<< HEAD
             elif mise == 0:
                 print("Warning ! Your amount must be bigger than 0 or you'll leave the game")
                 request_for_player = player.name+", Do you confirm that you'll leave the game ?"
@@ -37,6 +38,8 @@ def set_init(players):
                     print("Please correct the amount")
                 else:
                     print("I did not understand your answer")
+=======
+>>>>>>> d9dd9c69967a18935f81333d7b2546f9e41ee126
             else:
                 player.mise = mise
                 index += 1
@@ -48,7 +51,7 @@ def set_playing(players):
     """
     Playing one set of blackjack
     The set continue until :
-        Crouper (players[0]) has 17 cards or
+        Croupier (players[0]) has 17 cards or
         No player ask for a card
     """
     player_index = 1

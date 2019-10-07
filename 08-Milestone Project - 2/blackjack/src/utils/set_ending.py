@@ -10,20 +10,20 @@ def set_ending(players):
     """
     croupier = players[0]
     if croupier.game_value() > 21:
-        # All the players have won
+        print("All the players have won")
         for player in players[1:]:
             player.balance += 1.5*player.mise
     elif croupier.game_value() == 21:
-        # All the players have lost
+        print("All the players have lost")
         for player in players[1:]:
             player.balance = max(0, player.balance-player.mise)
     elif croupier.game_value() > 17:
         for player in players[1:]:
             if player.game_value() > croupier.game_value():
-                # Player with a bigger balance than croupier won
+                print(player.name+" has won")
                 player.balance += 1.5*player.mise
             elif player.game_value() > croupier.game_value():
-                # Player with lower balance than croupier lost
+                print(player.name+" has lost")
                 player.balance -= player.mise
 
     return players
