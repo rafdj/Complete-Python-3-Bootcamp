@@ -23,6 +23,7 @@ def set_init(players):
         player.game = []
         player.mise = 0
         try:
+            print(player.name+"your balance is : "+str(player.balance))
             request_for_player = player.name+", how much do you wanna play ?"
             mise = int(input(request_for_player))
             if mise > player.balance:
@@ -31,7 +32,7 @@ def set_init(players):
                 player.mise = mise
                 index += 1
         except:
-            print("I didn't understand your answer, please write an integer number")
+            print("I didn't understand your answer, please try again")
 
 
 def set_playing(players):
