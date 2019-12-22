@@ -23,6 +23,13 @@ while True:
         if max([player.game_value() for player in players[1:]]) == 0:
             print("Finished : The bank has won ! All the players have lost")
             break
+        elif max([player.game_value() == 21 for player in players[1:]]):
+            print("Blackjack !! some players have won")
+            #winning_players = [player.name if player.game_value()==21 for player in players[1:]]
+            winners = []
+            print("Congratulations players"+winners)
+
+
 
 """
 while not there_is_a_winner(players)[1]:

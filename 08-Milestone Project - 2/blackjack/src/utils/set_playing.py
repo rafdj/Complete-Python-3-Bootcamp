@@ -28,6 +28,16 @@ def set_init(players):
             mise = int(input(request_for_player))
             if mise > player.balance:
                 print(player.name+" You don't have enough money, this is your sold : "+str(player.balance))
+            elif mise == 0:
+                print("Warning ! Your amount must be bigger than 0 or you'll leave the game")
+                request_for_player = player.name+", Do you confirm that you'll leave the game ?"
+                player_answer = input(request_for_player)
+                if player_answer.strip().upper() == 'Y':
+                    break
+                elif player_answer.strip().upper() == 'N':
+                    print("Please correct the amount")
+                else:
+                    print("I did not understand your answer")
             else:
                 player.mise = mise
                 index += 1
@@ -73,4 +83,5 @@ def set_playing(players):
                 player_index = 1
             else:
                 # Reached maximum number of rounds : 17 cards for croupier than stop
+                print("The set is up !")
                 break
