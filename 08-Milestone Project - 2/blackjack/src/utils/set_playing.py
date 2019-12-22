@@ -14,7 +14,7 @@ def set_init(players):
     Ask them their new mises
     Output : Update Player list
     """
-    print("Faites vos jeux rien ne va plus !")
+    print("\nFaites vos jeux rien ne va plus !")
     players[0].game = []
     index = 1
     while index < len(players):
@@ -22,12 +22,12 @@ def set_init(players):
         # Reinitialize a player
         player.game = []
         player.mise = 0
+        print(player.name+", your balance is : "+str(player.balance))
         try:
-            print(player.name+"your balance is : "+str(player.balance))
-            request_for_player = player.name+", how much do you wanna play ?"
+            request_for_player = player.name+", how much do you wanna play ? "
             mise = int(input(request_for_player))
             if mise > player.balance:
-                print(player.name+" You don't have enough money, this is your sold :"+str(player.balance))
+                print(player.name+" You don't have enough money, this is your sold : "+str(player.balance))
             else:
                 player.mise = mise
                 index += 1
@@ -61,11 +61,11 @@ def set_playing(players):
 
         if player_index == len(players):
             if max([player.game_value() == 21 for player in players[1:]]):
-                print("Blackjack !! one of the players has won")
+                print("Blackjack !! one of the players has won\n")
                 break
             elif len(croupier) < 17:
                 # All the players have been asked for a new card in the current round
-                print("OK this round is up !")
+                print("OK this round is up !\n")
                 # Croupier add a card
                 new_card = Card.random_card()
                 croupier.game.append(new_card)
