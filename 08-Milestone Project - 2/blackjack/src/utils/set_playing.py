@@ -61,11 +61,11 @@ def set_playing(players):
 
         if player_index == len(players):
             if max([player.game_value() == 21 for player in players[1:]]):
-                print("Blackjack !! one of the players has won\n")
+                print("Blackjack !! one of the players has won \n")
                 break
             elif len(croupier) < 17:
                 # All the players have been asked for a new card in the current round
-                print("OK this round is up !\n")
+                print("OK this round is up ! There is no winner yet \n")
                 # Croupier add a card
                 new_card = Card.random_card()
                 croupier.game.append(new_card)
