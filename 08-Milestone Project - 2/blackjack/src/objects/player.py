@@ -3,7 +3,7 @@ This module describes the object "Player" with its different function
 It ccontains a relationship to the object "Card" which is one of the
 caracteristics of a player
 """
-from utils.card import *
+from objects.card import *
 
 
 # Import config

@@ -4,8 +4,8 @@ import os
 os.path.abspath(os.curdir)+"\\Complete-Python-3-Bootcamp\\08-Milestone Project - 2\\blackjack\\src"
 sys.path.append(os.path.abspath(os.curdir)+"\\Complete-Python-3-Bootcamp\\08-Milestone Project - 2\\blackjack\\src")
 
-from utils.card import *
-from utils.player import *
+from objects.card import *
+from objects.player import *
 
 
 def set_init(players):
