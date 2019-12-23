@@ -22,7 +22,9 @@ def set_ending(players):
             if player.game_value() > croupier.game_value():
                 print(player.name+" has won")
                 player.balance += 1.5*player.mise
-            elif player.game_value() > croupier.game_value():
+            elif player.game_value() == croupier.game_value():
+                print(player.name+", you get back your cash")
+            else:
                 print(player.name+" has lost")
                 player.balance -= player.mise
 
