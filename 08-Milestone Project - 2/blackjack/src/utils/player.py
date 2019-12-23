@@ -14,7 +14,7 @@ BLACKJACK_VALUE = 21
 
 class Player():
     """
-    Player is a class object with :
+    Player is a class object with that describes only one player
     name : Name of the player, with a default value
     balance : The balance of cash of the player, with a default value
     game : list of cards of the players, empyt by default
