@@ -2,7 +2,11 @@
 This is the main file to run a blackjack party
 """
 
-if __name__ == "__main__":
+
+def main():
+    """
+    Main code function
+    """
     import sys
     import os
 
@@ -38,3 +42,7 @@ if __name__ == "__main__":
                     player.name for player in players[1:] if player.game_value() == 21]
                 print("Congratulations players")
                 print(winning_players)
+
+
+if __name__ == "__main__":
+    main()
