@@ -1,14 +1,26 @@
+"""
+This module describes the object "Player" with its different function
+It ccontains a relationship to the object "Card" which is one of the
+caracteristics of a player
+"""
 from utils.card import *
 
 
 # Import config
-balance_by_default = 17000
-playername_by_default = "Croupier"
-blackjack_value = 21
+DEFAULT_BALANCE = 17000
+DEFAULT_PLAYERNAME = "Croupier"
+BLACKJACK_VALUE = 21
 
 
 class Player():
-    def __init__(self, name=playername_by_default, balance=balance_by_default, game=[], mise=0):
+    """
+    Player is a class object with :
+    name : Name of the player, with a default value
+    balance : The balance of cash of the player, with a default value
+    game : list of cards of the players, empyt by default
+    mise : the amount that should be played, 0 by default
+    """
+    def __init__(self, name=DEFAULT_PLAYERNAME, balance=DEFAULT_BALANCE, game=[], mise=0):
         """
         - if the name is empty or not provided, the player name should by the
         name by default
@@ -21,12 +33,12 @@ class Player():
         if name:
             self.name = name
         else:
-            self.name = playername_by_default
+            self.name = DEFAULT_PLAYERNAME
         self.balance = balance
-        if self.name != playername_by_default and self.balance == balance_by_default:
+        if self.name != DEFAULT_PLAYERNAME and self.balance == DEFAULT_BALANCE:
             self.balance = balance/17
         self.game = list(game)
-        self.mise = 0
+        self.mise = mise
 
     def __len__(self):
         """
@@ -57,7 +69,7 @@ class Player():
             for card in self.game:
                 if card.value == "As":
                     # Maximize chances to be close to the blackjack value 21
-                    if game_value+11 > blackjack_value:
+                    if game_value+11 > BLACKJACK_VALUE:
                         game_value += 1
                     else:
                         game_value += 11

@@ -25,6 +25,6 @@ while True:
             break
         elif max([player.game_value() == 21 for player in players[1:]]):
             print("Blackjack !! some players have won")
-            winning_players = [player.name if player.game_value()==21 for player in players[1:]]
+            winning_players = [player.name if player.game_value() == 21 for player in players[1:]]
             print("Congratulations players")
             print(winning_players)
